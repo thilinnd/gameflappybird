@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <title>Game Flappy Bird bằng HTML, CSS và Jquery &bull; Freetuts</title>
     <link href="css/style.css" rel="stylesheet"/>
+     <!-- Thêm nhạc nền -->
+     <audio autoplay controls>
+        <source src= "nhacnen.mp3" type="media/mp3"> </audio>
+
 </head>
 <body>
     <div id="container">   
@@ -17,5 +21,16 @@
     <button id="restart_btn">Chơi lại</button>
     <script src="js/jquery.min.js"></script>
     <script src="js/script.js"></script>
+    <div id="instructions_modal" style="display: none;">
+        <div style="background: #fff; padding: 20px; border-radius: 10px; text-align: center; position: relative; width: 80%; margin: 50px auto; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+            <h2>Hướng dẫn chơi</h2>
+            <p>1. Click chuột để làm chim bay lên.</p>
+            <p>2. Tránh va chạm vào ống nước hoặc vượt quá khung chơi.</p>
+            <p>3. Đạt điểm số để tăng cấp.</p>
+            <button id="close_instructions" style="margin-top: 10px; padding: 10px 20px; background: #007bff; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Đóng</button>
+        </div>
+    </div>
+    <button id="instructions_btn" style="margin: 10px; padding: 10px 20px; background: #28a745; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Hướng dẫn chơi</button>
+    
 </body>
 </html>
