@@ -127,6 +127,7 @@ $(function () {
         return !(b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2);
     }
 
+
     $('#container').mouseup(function () {
         clearInterval(go_up);
         go_up = false;
@@ -143,5 +144,44 @@ $(function () {
 
     $('#restart_btn').click(function () {
         location.reload();
+        });
+
+        // Hiển thị và đóng bảng hướng dẫn chơi
+    $('#instructions_btn').click(function () {
+        $('#instructions_modal').fadeIn();
     });
+    
+    // Nhạc nền
+    var backgroundMusic = document.getElementById('background_music');
+
+    function playMusic() {
+        backgroundMusic.play();
+    }
+
+    function stopMusic() {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+
+    // Chạy nhạc khi bắt đầu chơi
+    $('#play_btn').click(function () {
+        playMusic();
+        playGame();
+        $(this).hide();
+    });
+
+    // Dừng nhạc khi kết thúc
+    function stop_the_game() {
+        clearInterval(the_game);
+        game_over = true;
+        $('#restart_btn').slideDown();
+        stopMusic();
+    }
+
+
+    $('#close_instructions').click(function () {
+        $('#instructions_modal').fadeOut();
+});
+
+
 });
